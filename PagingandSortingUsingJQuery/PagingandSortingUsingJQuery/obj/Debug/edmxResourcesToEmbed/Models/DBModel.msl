@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CountryModelStoreContainer" CdmEntityContainer="DBModel">
+    <EntitySetMapping Name="countries">
+      <EntityTypeMapping TypeName="CountryModel.country">
+        <MappingFragment StoreEntitySet="countries">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sortname" ColumnName="sortname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="phonecode" ColumnName="phonecode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

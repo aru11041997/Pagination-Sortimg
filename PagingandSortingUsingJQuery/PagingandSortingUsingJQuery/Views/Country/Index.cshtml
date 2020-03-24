@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Country List";
+}
+<link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<h2>Country List</h2>
+
+<table id="CountryTable" class="display">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Sort Name
+            </th>
+            <th>
+                Country Name
+            </th>
+            <th>
+                Phone Code
+            </th>
+        </tr>
+    </thead>
+</table>
+
+
+
+@section scripts{
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#CountryTable').DataTable({
+                "ajax": {
+                    "url": "/Country/GetList",
+                    "type": "GET",
+                    "datatype": "json"
+                },
+                "columns": [
+                    {"data" : "id"},
+                    {"data" : "sortname"},
+                    {"data" : "name"},
+                    {"data" : "phonecode"}
+                ]
+            });
+        });
+    </script>
+
+
+}
+
